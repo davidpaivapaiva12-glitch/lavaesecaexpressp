@@ -83,7 +83,13 @@ export const Navbar = () => {
               </a>
             ))}
             <Button variant="hero" asChild>
-              <a href="#contato">Solicitar orçamento</a>
+              <a
+                href={`https://wa.me/5511953204114?text=${encodeURIComponent("Quero solicitar um orçamento")}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Solicitar orçamento
+              </a>
             </Button>
           </div>
         </div>

@@ -17,7 +17,7 @@ const steps = [
   {
     n: "04",
     title: "Reparo com garantia",
-    desc: "Realizamos o serviço com peças originais e oferecemos 90 dias de garantia.",
+    desc: "Realizamos o serviço com peças originais e oferecemos 365 dias (1 ano) de garantia.",
   },
 ];
 

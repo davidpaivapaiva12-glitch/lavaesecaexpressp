@@ -47,7 +47,7 @@ export const Hero = () => {
 
             <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
               {[
-                { icon: ShieldCheck, label: "Garantia", value: "90 dias" },
+                { icon: ShieldCheck, label: "Garantia", value: "1 ano" },
                 { icon: Clock, label: "Atendimento", value: "Mesmo dia" },
                 { icon: MapPin, label: "Cobertura", value: "Todo SP" },
               ].map((item) => (

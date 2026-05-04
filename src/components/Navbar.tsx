@@ -50,7 +50,13 @@ export const Navbar = () => {
 
         <div className="hidden md:block">
           <Button variant="hero" size="default" asChild>
-            <a href="#contato">Solicitar orçamento</a>
+            <a
+              href={`https://wa.me/5511953204114?text=${encodeURIComponent("Quero solicitar um orçamento")}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Solicitar orçamento
+            </a>
           </Button>
         </div>
 

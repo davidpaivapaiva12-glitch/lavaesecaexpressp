@@ -22,7 +22,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "LavaeSecaExpresSP · Assistência técnica especializada em máquinas lava e seca em São Paulo - SP. Atendimento rápido, peças originais e 90 dias de garantia."
+      "LavaeSecaExpresSP · Assistência técnica especializada em máquinas lava e seca em São Paulo - SP. Atendimento rápido, peças originais e 1 ano de garantia."
     );
   }, []);
 

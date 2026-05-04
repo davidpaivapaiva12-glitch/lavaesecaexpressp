@@ -9,15 +9,31 @@ import { toast } from "sonner";
 const WHATSAPP = "5511953204114";
 
 export const Contact = () => {
-  const [form, setForm] = useState({ nome: "", telefone: "", problema: "" });
+  const [form, setForm] = useState({
+    nome: "",
+    telefone: "",
+    endereco: "",
+    cep: "",
+    complemento: "",
+    referencia: "",
+    problema: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.nome || !form.telefone) {
-      toast.error("Preencha nome e telefone para continuar.");
+    if (!form.nome || !form.telefone || !form.endereco || !form.cep || !form.complemento || !form.problema) {
+      toast.error("Preencha os campos obrigatórios para continuar.");
       return;
     }
-    const msg = `Olá! Sou ${form.nome}. Telefone: ${form.telefone}. ${form.problema ? `Problema: ${form.problema}` : "Gostaria de um orçamento."}`;
+    const msg =
+      `*Solicitação de orçamento - LavaeSecaExpresSP*\n\n` +
+      `*Nome:* ${form.nome}\n` +
+      `*WhatsApp / Telefone:* ${form.telefone}\n` +
+      `*Endereço:* ${form.endereco}\n` +
+      `*CEP:* ${form.cep}\n` +
+      `*Complemento:* ${form.complemento}\n` +
+      (form.referencia ? `*Ponto de referência:* ${form.referencia}\n` : "") +
+      `*Problema:* ${form.problema}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
     toast.success("Redirecionando para o WhatsApp...");
   };

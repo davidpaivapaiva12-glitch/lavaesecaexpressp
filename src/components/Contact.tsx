@@ -9,15 +9,31 @@ import { toast } from "sonner";
 const WHATSAPP = "5511953204114";
 
 export const Contact = () => {
-  const [form, setForm] = useState({ nome: "", telefone: "", problema: "" });
+  const [form, setForm] = useState({
+    nome: "",
+    telefone: "",
+    endereco: "",
+    cep: "",
+    complemento: "",
+    referencia: "",
+    problema: "",
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.nome || !form.telefone) {
-      toast.error("Preencha nome e telefone para continuar.");
+    if (!form.nome || !form.telefone || !form.endereco || !form.cep || !form.complemento || !form.problema) {
+      toast.error("Preencha os campos obrigatórios para continuar.");
       return;
     }
-    const msg = `Olá! Sou ${form.nome}. Telefone: ${form.telefone}. ${form.problema ? `Problema: ${form.problema}` : "Gostaria de um orçamento."}`;
+    const msg =
+      `*Solicitação de orçamento - LavaeSecaExpresSP*\n\n` +
+      `*Nome:* ${form.nome}\n` +
+      `*WhatsApp / Telefone:* ${form.telefone}\n` +
+      `*Endereço:* ${form.endereco}\n` +
+      `*CEP:* ${form.cep}\n` +
+      `*Complemento:* ${form.complemento}\n` +
+      (form.referencia ? `*Ponto de referência:* ${form.referencia}\n` : "") +
+      `*Problema:* ${form.problema}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
     toast.success("Redirecionando para o WhatsApp...");
   };
@@ -86,6 +102,7 @@ export const Contact = () => {
                     value={form.nome}
                     onChange={(e) => setForm({ ...form, nome: e.target.value })}
                     className="h-12"
+                    maxLength={100}
                   />
                 </div>
                 <div>
@@ -96,16 +113,64 @@ export const Contact = () => {
                     value={form.telefone}
                     onChange={(e) => setForm({ ...form, telefone: e.target.value })}
                     className="h-12"
+                    maxLength={20}
+                  />
+                </div>
+                <div className="grid sm:grid-cols-3 gap-5">
+                  <div className="sm:col-span-2">
+                    <Label htmlFor="endereco" className="text-primary mb-2 block">Endereço</Label>
+                    <Input
+                      id="endereco"
+                      placeholder="Rua, número, bairro"
+                      value={form.endereco}
+                      onChange={(e) => setForm({ ...form, endereco: e.target.value })}
+                      className="h-12"
+                      maxLength={200}
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="cep" className="text-primary mb-2 block">CEP</Label>
+                    <Input
+                      id="cep"
+                      placeholder="00000-000"
+                      value={form.cep}
+                      onChange={(e) => setForm({ ...form, cep: e.target.value })}
+                      className="h-12"
+                      maxLength={10}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <Label htmlFor="complemento" className="text-primary mb-2 block">Complemento (casa ou apto)</Label>
+                  <Input
+                    id="complemento"
+                    placeholder="Ex: Apto 102, Bloco B"
+                    value={form.complemento}
+                    onChange={(e) => setForm({ ...form, complemento: e.target.value })}
+                    className="h-12"
+                    maxLength={100}
                   />
                 </div>
                 <div>
-                  <Label htmlFor="problema" className="text-primary mb-2 block">Descreva o problema (opcional)</Label>
+                  <Label htmlFor="referencia" className="text-primary mb-2 block">Ponto de referência (opcional)</Label>
+                  <Input
+                    id="referencia"
+                    placeholder="Ex: Próximo ao mercado..."
+                    value={form.referencia}
+                    onChange={(e) => setForm({ ...form, referencia: e.target.value })}
+                    className="h-12"
+                    maxLength={150}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="problema" className="text-primary mb-2 block">Descreva o problema</Label>
                   <Textarea
                     id="problema"
                     placeholder="Ex: A máquina não está aquecendo na hora de secar..."
                     value={form.problema}
                     onChange={(e) => setForm({ ...form, problema: e.target.value })}
                     rows={4}
+                    maxLength={1000}
                   />
                 </div>
 

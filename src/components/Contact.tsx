@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-const WHATSAPP = "5511999999999";
+const WHATSAPP = "5511953204114";
 
 export const Contact = () => {
   const [form, setForm] = useState({ nome: "", telefone: "", problema: "" });
@@ -41,10 +41,10 @@ export const Contact = () => {
 
             <div className="space-y-4">
               {[
-                { icon: MessageCircle, label: "WhatsApp", value: "(11) 99999-9999", href: `https://wa.me/${WHATSAPP}` },
-                { icon: Phone, label: "Telefone", value: "(11) 4000-0000", href: "tel:+551140000000" },
-                { icon: Mail, label: "Email", value: "contato@lavatec.com.br", href: "mailto:contato@lavatec.com.br" },
-                { icon: MapPin, label: "Localização", value: "Osasco - SP · Atende todo estado", href: "#" },
+              { icon: MessageCircle, label: "WhatsApp", value: "(11) 95320-4114", href: `https://wa.me/${WHATSAPP}` },
+                { icon: Phone, label: "Telefone", value: "(11) 95320-4114", href: "tel:+5511953204114" },
+                { icon: Mail, label: "Email", value: "Lavaesecaexpressp@gmail.com", href: "mailto:Lavaesecaexpressp@gmail.com" },
+                { icon: MapPin, label: "Localização", value: "São Paulo - SP", href: "#" },
               ].map((c) => (
                 <a
                   key={c.label}
@@ -115,7 +115,7 @@ export const Contact = () => {
                     Enviar pelo WhatsApp
                   </Button>
                   <Button type="button" variant="outline" size="xl" asChild>
-                    <a href={`tel:+551140000000`}>
+                    <a href={`tel:+5511953204114`}>
                       <Phone className="h-5 w-5" />
                       Ligar
                     </a>

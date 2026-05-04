@@ -31,7 +31,11 @@ export const Hero = () => {
 
             <div className="flex flex-wrap gap-4 pt-2">
               <Button variant="hero" size="xl" asChild>
-                <a href="#contato">
+                <a
+                  href={`https://wa.me/5511953204114?text=${encodeURIComponent("Quero agendar uma visita técnica")}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Agendar visita técnica
                   <ArrowRight className="h-5 w-5" />
                 </a>

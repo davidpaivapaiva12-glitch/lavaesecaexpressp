@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    document.title = "LavaTec · Assistência Técnica de Lava e Seca em Osasco e SP";
+    document.title = "LavaeSecaExpresSP · Assistência Técnica de Lava e Seca em São Paulo";
     const setMeta = (name: string, content: string) => {
       let el = document.querySelector(`meta[name="${name}"]`);
       if (!el) {
@@ -22,7 +22,7 @@ const Index = () => {
     };
     setMeta(
       "description",
-      "Assistência técnica especializada em máquinas lava e seca em Osasco e todo estado de SP. Atendimento rápido, peças originais e 90 dias de garantia."
+      "LavaeSecaExpresSP · Assistência técnica especializada em máquinas lava e seca em São Paulo - SP. Atendimento rápido, peças originais e 90 dias de garantia."
     );
   }, []);
 

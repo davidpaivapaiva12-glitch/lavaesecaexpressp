@@ -31,7 +31,7 @@ export const Navbar = () => {
             <Wrench className="h-5 w-5 text-white" />
           </div>
           <div className="leading-tight">
-            <div className="font-display font-bold text-lg text-primary">LavaTec</div>
+            <div className="font-display font-bold text-lg text-primary">LavaeSecaExpresSP</div>
             <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Assistência Técnica</div>
           </div>
         </a>

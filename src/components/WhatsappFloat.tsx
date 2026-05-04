@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 export const WhatsappFloat = () => (
   <a
-    href="https://wa.me/5511999999999"
+    href="https://wa.me/5511953204114"
     target="_blank"
     rel="noreferrer"
     aria-label="Falar no WhatsApp"
